@@ -1,7 +1,3 @@
-# Sql_server_medallion_analytics
-An end-to-end data engineering pipeline using MS SQL Server to implement a Medallion Architecture (Bronze/Silver/Gold). Features automated ETL from CSVs, T-SQL exploratory data analysis, and a Power BI dashboard for executive insights
-# SQL Server Medallion Analytics: End-to-End Data Warehousing
-
 ## 📌 Project Overview
 This repository implements a full-stack **Medallion Architecture** (Bronze, Silver, Gold) entirely within **Microsoft SQL Server**. It demonstrates the transition from raw data ingestion to a refined, query-ready Star Schema for advanced business analytics.
 
