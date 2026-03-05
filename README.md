@@ -82,16 +82,4 @@ Special thanks to **Baraa** for the detailed walkthrough and for sharing these d
 * **YouTube Channel:** [Data with Baraa](https://www.youtube.com/@DataWithBaraa)
 * **Video Link:** [https://youtu.be/SSKVgrwhzus?si=S_Z996sWs94jZSZL](https://youtu.be/SSKVgrwhzus?si=S_Z996sWs94jZSZL)
   
-## 🛠 Tech Stack
-* **Database Engine:** Microsoft SQL Server
-* **Language:** Advanced T-SQL (CTEs, Window Functions, DDL/DML)
-* **Architecture Pattern:** Medallion (Data Lakehouse style)
-* **Modeling:** Dimensional Modeling (Star Schema)
-* **Data Analytics tool:** Power BI
-
-## 🤝 Credits
-Special thanks to **Baraa** for the detailed walkthrough and for sharing these data engineering best practices.
-* **YouTube Channel:** [Data with Baraa](https://www.youtube.com/@DataWithBaraa)
-* **Video Link:** [https://youtu.be/SSKVgrwhzus?si=S_Z996sWs94jZSZL](https://youtu.be/SSKVgrwhzus?si=S_Z996sWs94jZSZL)
-
 ---
