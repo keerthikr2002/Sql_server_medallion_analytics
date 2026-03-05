@@ -48,7 +48,7 @@ Select Metric = {
     ("Total Orders", NAMEOF([Orders (Latest Year)]), 2),
     ("Total Customers", NAMEOF([Customers (Latest Year)]), 3)
 }
-
+```
 ## 🛠 Tech Stack
 * **Database Engine:** Microsoft SQL Server
 * **Language:** Advanced T-SQL (CTEs, Window Functions, DDL/DML)
