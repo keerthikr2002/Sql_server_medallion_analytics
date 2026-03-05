@@ -8,7 +8,7 @@
 This repository demonstrates a full-cycle Data Engineering and Business Intelligence solution. It transforms raw, siloed sales data into a high-performance interactive dashboard. By implementing a **Medallion Architecture**, the solution ensures data integrity from ingestion to final visualization, providing stakeholders with a "Single Source of Truth" for global sales performance.
 
 ### 📊 Executive Dashboard Insights
-![Final Dashboard Screenshot](./Images/dashboard_screenshot.png)
+![Dashboard Screenshot](Reports/automobiles&clothing sales report.png)
 *Figure 1: Final Interactive Dashboard showing the 2013 Performance Analysis.*
 
 **Key Features Visible in the Report:**
