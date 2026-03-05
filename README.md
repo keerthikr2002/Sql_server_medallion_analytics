@@ -22,7 +22,7 @@ The data is processed through three distinct layers within SQL Server to ensure 
 The Power BI dashboard was engineered for high interactivity and "Latest Year" focus:
 
 * **Dynamic Metric Switching:** Utilizes **Field Parameters** allowing users to toggle the entire report between Sales, Profit, Orders, and Customers with a single click.
-* **Time-Intelligence DAX:** Custom measures implemented to automatically lock visuals to the **Latest Complete Year (2014)** while maintaining YoY (Year-over-Year) growth context.
+* **Time-Intelligence DAX:** Custom measures implemented to automatically lock visuals to the **Latest Complete Year** while maintaining YoY (Year-over-Year) growth context.
 * **Dynamic Titling:** Context-aware headers that update based on the selected metric and filtered time frame.
 * **Responsive X-Axis:** Engineered to "snap" to monthly trends for the selected year, removing historical noise.
 
@@ -54,7 +54,7 @@ Select Metric = {
 * **Language:** Advanced T-SQL (CTEs, Window Functions, DDL/DML)
 * **Architecture Pattern:** Medallion (Data Lakehouse style)
 * **Modeling:** Dimensional Modeling (Star Schema)
-* **Data Analytics tool:** Power bi
+* **Data Analytics tool:** Power BI
 
 ## 🤝 Credits
 Special thanks to **Baraa** for the detailed walkthrough and for sharing these data engineering best practices.
