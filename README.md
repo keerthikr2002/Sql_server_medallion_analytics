@@ -37,13 +37,23 @@ The Power BI dashboard was engineered for high interactivity and "Latest Year" f
 * **Responsive X-Axis:** Engineered to "snap" to monthly trends for the selected year, removing historical noise.
 
 ---
-
 ### 📂 Repository Structure
-* **📂 SQL_Scripts/**: Contains T-SQL scripts for Bronze, Silver, and Gold transformations.
-* **📂 Reports/**: The compiled `.pbix` Power BI file.
-* **📂 Data/**: Sample data used for the Medallion pipeline.
-* **📂 Images/**: Dashboard screenshots and UI icons for documentation.
 
+* **📂 Reports/**: Contains the Power BI production files and dashboard documentation.
+    * `automobiles report.pbix`: The primary Power BI semantic model and dashboard.
+    * `automobiles_clothing_sales_report.png`: High-resolution dashboard screenshot for README documentation.
+* **📂 Sql_data_Warehouse/**: The core Data Engineering directory housing the Medallion pipeline assets.
+    * **📂 datasets/**: Contains source data or sample files used for ingestion.
+    * **📂 docs/**: Documentation specifically for the SQL Data Warehouse architecture.
+    * **📂 scripts/**: T-SQL scripts for Bronze, Silver, and Gold layer transformations.
+    * **📂 tests/**: SQL unit tests and data quality checks.
+    * `README.MD`: Specific documentation for the SQL warehouse project.
+* **📂 data_analysis/**: Contains supplementary analytical documentation and data curated for reporting.
+    * **📂 docs/**: Business logic and analysis documentation.
+    * **📂 gold_layer-csv-files/**: Exported curated data used for final analysis.
+    * **📂 scripts/**: Python or SQL scripts used specifically for ad-hoc data analysis.
+* `LICENSE`: Legal permissions and usage terms for the repository.
+* `README.md`: The main project documentation and executive summary.
 ---
 
 ### 💡 DAX Highlights: Dynamic Metric Parameter
