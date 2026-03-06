@@ -40,7 +40,7 @@ The Power BI dashboard was engineered for high interactivity and "Latest Year" f
 ### 📂 Repository Structure
 
 * **📂 Reports/**: Contains the Power BI production files and dashboard documentation.
-    * `automobiles report.pbix`: The primary Power BI semantic model and dashboard.
+    * `automobiles_sales_report.pbix`: The primary Power BI semantic model and dashboard.
     * `automobiles_clothing_sales_report.png`: High-resolution dashboard screenshot for README documentation.
 * **📂 Sql_data_Warehouse/**: The core Data Engineering directory housing the Medallion pipeline assets.
     * **📂 datasets/**: Contains source data or sample files used for ingestion.
