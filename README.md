@@ -4,8 +4,15 @@
 [![SQL Server](https://img.shields.io/badge/SQL_Server-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white)](https://www.microsoft.com/en-us/sql-server)
 [![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=power-bi&logoColor=black)](https://powerbi.microsoft.com/)
 
-### 🚀 Business Overview
-This repository demonstrates a full-cycle Data Engineering and Business Intelligence solution. It transforms raw, siloed sales data into a high-performance interactive dashboard. By implementing a **Medallion Architecture**, the solution ensures data integrity from ingestion to final visualization, providing stakeholders with a "Single Source of Truth" for global sales performance.
+---
+
+### 🚀 Project Overview
+
+This project presents a full-cycle Data Engineering and Business Intelligence solution built to analyze global automobile and clothing sales performance. The goal was to design a scalable, production-style data pipeline that transforms raw, siloed CSV data into a clean, queryable warehouse — and finally into an executive-ready Power BI dashboard.
+
+The core challenge this project solves: **raw sales data across multiple domains (products, customers, geography) was unstructured and unusable for business decisions.** By implementing a Medallion Architecture, I ensured data integrity at every stage — from ingestion to final visualization — providing stakeholders with a reliable "Single Source of Truth."
+
+---
 
 ### 📊 Executive Dashboard Insights
 ![Dashboard Screenshot](Reports/automobiles_&_clothing_sales_report.png)
