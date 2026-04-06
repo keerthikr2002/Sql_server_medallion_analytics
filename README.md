@@ -9,55 +9,43 @@ This repository demonstrates a full-cycle Data Engineering and Business Intellig
 
 ### 📊 Executive Dashboard Insights
 ![Dashboard Screenshot](Reports/automobiles_&_clothing_sales_report.png)
-*Figure 1: Final Interactive Dashboard showing the 2013 Performance Analysis.*
+*Figure 1: Interactive Dashboard — 2013 Sales Performance Analysis*
 
-**Key Features Visible in the Report:**
-* **Metric Selector (Tabs):** A custom-engineered navigation bar allowing users to switch the entire report view between **Sales, Cost, Profit, Customers, Orders, and Quantity**.
-* **KPI Scorecard:** Real-time tracking of Total Sales ($15M), Profit Margin (40.78%), and Total Customers (17K) with automated Year-over-Year (YoY) growth indicators.
-* **Trend Analysis:** A Monthly Sales Trend for 2013 that combines bar and line charts to visualize revenue vs. cost across the fiscal year.
-* **Demographic Segmentation:** Detailed breakdowns of sales by Gender, Age Group (focused on 50+ and 40-49), and Customer Segment (New, VIP, Regular).
-
----
-
-### 🏗️ Data Architecture: The Medallion Approach
-The data is processed through three distinct layers within SQL Server to ensure quality and performance:
-
-1. **Bronze (Raw):** Initial ingestion of source data (Sales, Products, Customers, Geography) with minimal changes.
-2. **Silver (Cleansed):** Data deduplication, handling null values, and enforcing schema consistency.
-3. **Gold (Curated):** Final dimension and fact tables (Star Schema) optimized for Power BI consumption, including aggregated sales metrics.
+**Key Features:**
+- **Metric Selector (Tabs):** Custom navigation bar to switch the entire report view between Sales, Cost, Profit, Customers, Orders, and Quantity
+- **KPI Scorecard:** Tracks Total Sales ($15M), Profit Margin (40.78%), and Total Customers (17K) with automated Year-over-Year (YoY) growth indicators
+- **Trend Analysis:** Monthly Sales Trend combining bar and line charts to visualize revenue vs. cost across the fiscal year
+- **Demographic Segmentation:** Breakdowns by Gender, Age Group, and Customer Segment (New, VIP, Regular)
 
 ---
 
-### 🚀 Key Analytics & DAX Engineering
-The Power BI dashboard was engineered for high interactivity and "Latest Year" focus:
+### 🔍 Key Business Insights
 
-* **Dynamic Metric Switching:** Utilizes **Field Parameters** allowing users to toggle the entire report between Sales, Profit, Orders, and Customers with a single click.
-* **Time-Intelligence DAX:** Custom measures implemented to automatically lock visuals to the **Latest Complete Year (FY 2013)** while maintaining YoY growth context.
-* **Dynamic Titling:** Context-aware headers that update based on the selected metric (e.g., "Monthly Sales Trend for 2013").
-* **Responsive X-Axis:** Engineered to "snap" to monthly trends for the selected year, removing historical noise.
+After building the pipeline and analyzing the Gold layer data, here are the findings:
+
+1. **The 50+ age group is the dominant revenue driver**, contributing the highest share of total sales — suggesting marketing spend should prioritize this demographic over younger segments.
+2. **Profit margin holds consistently above 40%** across both product categories, indicating healthy pricing strategy and low cost leakage in the supply chain.
+3. **Q4 shows the strongest sales spike** in the 2013 monthly trend, pointing to seasonal demand that can be leveraged for inventory and campaign planning.
+4. **VIP customers, while fewer in number, generate disproportionately higher revenue per order** — a clear signal for a loyalty retention program.
+5. **Clothing outperforms Automobiles in order volume** but lags in revenue per order, highlighting a cross-sell opportunity for premium product lines.
 
 ---
-### 📂 Repository Structure
 
-* **📂 Reports/**: Contains the Power BI production files and dashboard documentation.
-    * `automobiles_sales_report.pbix`: The primary Power BI semantic model and dashboard.
-    * `automobiles_clothing_sales_report.png`: High-resolution dashboard screenshot for README documentation.
-* **📂 Sql_data_Warehouse/**: The core Data Engineering directory housing the Medallion pipeline assets.
-    * **📂 datasets/**: Contains source data or sample files used for ingestion.
-    * **📂 docs/**: Documentation specifically for the SQL Data Warehouse architecture.
-    * **📂 scripts/**: T-SQL scripts for Bronze, Silver, and Gold layer transformations.
-    * **📂 tests/**: SQL unit tests and data quality checks.
-    * `README.MD`: Specific documentation for the SQL warehouse project.
-* **📂 data_analysis/**: Contains supplementary analytical documentation and data curated for reporting.
-    * **📂 docs/**: Business logic and analysis documentation.
-    * **📂 gold_layer-csv-files/**: Exported curated data used for final analysis.
-    * **📂 scripts/**: Python or SQL scripts used specifically for ad-hoc data analysis.
-* `LICENSE`: Legal permissions and usage terms for the repository.
-* `README.md`: The main project documentation and executive summary.
+### 🏗️ Data Architecture: Medallion Approach
+
+Data flows through three distinct layers within SQL Server:
+
+| Layer | Purpose |
+|-------|---------|
+| **Bronze (Raw)** | Initial ingestion of source CSVs (Sales, Products, Customers, Geography) with no transformation |
+| **Silver (Cleansed)** | Deduplication, null handling, schema enforcement, and data type standardization |
+| **Gold (Curated)** | Star Schema fact and dimension tables optimized for Power BI — includes aggregated sales metrics |
+
 ---
 
-### 💡 DAX Highlights: Dynamic Metric Parameter
-The core of the dashboard's flexibility is the `Select Metric` field parameter:
+### 💡 DAX Engineering Highlights
+
+The dashboard's flexibility is powered by a custom `Select Metric` field parameter:
 
 ```dax
 Select Metric = {
@@ -69,20 +57,61 @@ Select Metric = {
     ("Quantity", NAMEOF([Total Quantity]), 5)
 }
 ```
-### ⚙️ Implementation Guide
-1. **Environment Setup**: Ensure Microsoft SQL Server is running.
-2. **Database Build**: Execute the scripts in the `SQL_Scripts` folder in sequence (Bronze → Silver → Gold).
-3. **Power BI Configuration**: Open `Reports/automobiles_report.pbix`.
-4. **Data Source Mapping**: Update the **Data Source Settings** to point to your specific SQL Server instance and database.
-5. **Data Refresh**: Click **'Refresh'** in Power BI to propagate the Medallion data through the model into the visuals.
+
+**Time Intelligence:** Custom DAX measures automatically lock visuals to the Latest Complete Year (FY 2013) while maintaining YoY growth context — avoiding the common mistake of mixing partial-year data with full-year comparisons.
 
 ---
 
-### 🛠 Tech Stack
-* **Database Engine:** Microsoft SQL Server
-* **Language:** Advanced T-SQL (CTEs, Window Functions, DDL/DML)
-* **Architecture Pattern:** Medallion (Data Lakehouse style)
-* **Modeling:** Dimensional Modeling (Star Schema)
-* **Data Analytics tool:** Power BI
+### 🛠️ Tech Stack
+
+| Tool | Usage |
+|------|-------|
+| Microsoft SQL Server | Database engine and pipeline execution |
+| T-SQL | ETL scripting — CTEs, Window Functions, DDL/DML |
+| Medallion Architecture | Data Lakehouse-style layering pattern |
+| Star Schema | Dimensional modeling for analytics optimization |
+| Power BI | Dashboard and DAX engineering |
 
 ---
+
+### 📂 Repository Structure
+
+```
+├── Reports/                        # Power BI files and dashboard screenshots
+│   ├── automobiles_sales_report.pbix
+│   └── automobiles_clothing_sales_report.png
+├── Sql_data_Warehouse/             # Core data engineering pipeline
+│   ├── datasets/                   # Source CSV files
+│   ├── docs/                       # Architecture documentation
+│   ├── scripts/                    # Bronze → Silver → Gold T-SQL scripts
+│   └── tests/                      # SQL unit tests and data quality checks
+├── data_analysis/                  # Supplementary analysis
+│   ├── docs/                       # Business logic documentation
+│   ├── gold_layer-csv-files/       # Exported curated data
+│   └── scripts/                    # Ad-hoc analysis scripts
+└── README.md
+```
+
+---
+
+### ⚙️ How to Run This Project
+
+1. **Environment:** Ensure Microsoft SQL Server is installed and running
+2. **Build the Warehouse:** Execute scripts in `Sql_data_Warehouse/scripts/` in sequence — Bronze → Silver → Gold
+3. **Open Dashboard:** Launch `Reports/automobiles_sales_report.pbix` in Power BI Desktop
+4. **Connect Data Source:** Update Data Source Settings to point to your SQL Server instance
+5. **Refresh:** Click Refresh in Power BI to propagate the Medallion data through the model
+
+---
+
+### 📌 What I Learned
+
+- Designing a production-style data warehouse from scratch using industry-standard Medallion Architecture
+- Writing advanced T-SQL including Window Functions, CTEs, and stored procedures for ETL automation
+- Dimensional modeling (Star Schema) and why it matters for query performance in BI tools
+- DAX engineering for dynamic, time-intelligent dashboards in Power BI
+- Data quality testing at each pipeline layer before promoting to the next
+
+---
+
+*Built by Keerthi K R | [GitHub Profile](https://github.com/keerthikr2002)*
