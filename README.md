@@ -119,4 +119,3 @@ Select Metric = {
 - DAX engineering for dynamic, time-intelligent dashboards in Power BI
 - Data quality testing at each pipeline layer before promoting to the next
 
----
