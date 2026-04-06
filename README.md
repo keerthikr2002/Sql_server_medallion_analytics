@@ -86,10 +86,3 @@ Select Metric = {
 * **Data Analytics tool:** Power BI
 
 ---
-
-### 🤝 Credits
-Special thanks to **Baraa** for the detailed walkthrough and for sharing these data engineering best practices.
-* **YouTube Channel:** [Data with Baraa](https://www.youtube.com/@DataWithBaraa)
-* **Video Link:** [https://youtu.be/SSKVgrwhzus?si=S_Z996sWs94jZSZL](https://youtu.be/SSKVgrwhzus?si=S_Z996sWs94jZSZL)
-  
----
