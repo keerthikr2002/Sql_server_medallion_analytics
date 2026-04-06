@@ -120,5 +120,3 @@ Select Metric = {
 - Data quality testing at each pipeline layer before promoting to the next
 
 ---
-
-*Built by Keerthi K R | [GitHub Profile](https://github.com/keerthikr2002)*
